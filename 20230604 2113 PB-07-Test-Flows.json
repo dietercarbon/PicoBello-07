@@ -1,0 +1,681 @@
+[
+    {
+        "id": "379a604c869e1a5d",
+        "type": "tab",
+        "label": "PB-07-Test-Flows",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef77123f530e11d9",
+        "type": "inject",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 40,
+        "wires": [
+            [
+                "94fb799b92e50eff",
+                "2fd44d61528d8780"
+            ]
+        ]
+    },
+    {
+        "id": "94fb799b92e50eff",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2fd44d61528d8780",
+        "type": "ui_text",
+        "z": "379a604c869e1a5d",
+        "group": "7462ab83dedbf3c2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Zeit:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 670,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c7b3eb66976cbc29",
+        "type": "ui_button",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "group": "7462ab83dedbf3c2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "1. button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Moin vom Button",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "9432f75b51c2af11",
+                "c35a69731ab2ba76"
+            ]
+        ]
+    },
+    {
+        "id": "9432f75b51c2af11",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c4ec16f073cfea06",
+        "type": "mqtt in",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "topic": "TasterA",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "127d96a2f9c59841",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "d755446232554a85",
+                "c35a69731ab2ba76"
+            ]
+        ]
+    },
+    {
+        "id": "d755446232554a85",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "e55d1fa6716a0de6",
+        "type": "mqtt out",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "topic": "LEDA",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "127d96a2f9c59841",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b67e1ad4f6ec79c2",
+        "type": "inject",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "e55d1fa6716a0de6"
+            ]
+        ]
+    },
+    {
+        "id": "2bea8cfd3f186886",
+        "type": "inject",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "e55d1fa6716a0de6"
+            ]
+        ]
+    },
+    {
+        "id": "ec2f7500dc35aa36",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "Ausgabe",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "84d727e446cb60e3",
+        "type": "inject",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "c35a69731ab2ba76"
+            ]
+        ]
+    },
+    {
+        "id": "c35a69731ab2ba76",
+        "type": "function",
+        "z": "379a604c869e1a5d",
+        "name": "Trigger wechselt 0&1",
+        "func": "if (flow.get(\"state\") === undefined) {\n    flow.set(\"state\", 0);\n}\n\n// Wechsle den Zustand zwischen 0 und 1\nif (flow.get(\"state\") === 0) {\n    flow.set(\"state\", 1);\n} else {\n    flow.set(\"state\", 0);\n}\n\n// Gib den aktuellen Zustand aus\nmsg.payload = flow.get(\"state\");\nreturn msg;\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "ec2f7500dc35aa36",
+                "e55d1fa6716a0de6",
+                "3a1623f726b54893"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c94db8ba1f5e6425",
+        "type": "ui_dropdown",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "7462ab83dedbf3c2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "LED 1",
+                "value": 1,
+                "type": "num"
+            },
+            {
+                "label": "LED 2",
+                "value": 2,
+                "type": "num"
+            },
+            {
+                "label": "LED 3",
+                "value": 3,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "c35a69731ab2ba76"
+            ]
+        ]
+    },
+    {
+        "id": "267bab761817722c",
+        "type": "ui_switch",
+        "z": "379a604c869e1a5d",
+        "name": "LED 1 Schieber",
+        "label": "LED 1 Schieber",
+        "tooltip": "",
+        "group": "7462ab83dedbf3c2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "LEDA",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 440,
+        "y": 420,
+        "wires": [
+            [
+                "e55d1fa6716a0de6"
+            ]
+        ]
+    },
+    {
+        "id": "8a21212822d7e674",
+        "type": "mqtt in",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "topic": "TempA",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "127d96a2f9c59841",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "092959df2cd9f8ed",
+                "2430ec67d494c709",
+                "046763d26aea8dd8"
+            ]
+        ]
+    },
+    {
+        "id": "092959df2cd9f8ed",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 650,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2430ec67d494c709",
+        "type": "ui_chart",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "group": "7462ab83dedbf3c2",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 690,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "105e78cc158c57d6",
+        "type": "file",
+        "z": "379a604c869e1a5d",
+        "name": "TempA in Log schreiben",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 750,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b34f6d2b9599151",
+        "type": "ui_button",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "group": "7462ab83dedbf3c2",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Löscht Temp-Datei",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Lösche Datei",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 780,
+        "wires": [
+            [
+                "0fab1f5ff2711091"
+            ]
+        ]
+    },
+    {
+        "id": "0fab1f5ff2711091",
+        "type": "file",
+        "z": "379a604c869e1a5d",
+        "name": "",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "encoding": "none",
+        "x": 430,
+        "y": 780,
+        "wires": [
+            [
+                "302fcce8589273db"
+            ]
+        ]
+    },
+    {
+        "id": "302fcce8589273db",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "Datei gelöscht",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "046763d26aea8dd8",
+        "type": "function",
+        "z": "379a604c869e1a5d",
+        "name": "Temperatur loggen",
+        "func": "var date = new Date();\n\nvar year = date.getFullYear();\nvar month = (date.getMonth() + 1).toString().padStart(2, '0');\nvar day = date.getDate().toString().padStart(2, '0');\nvar hours = date.getHours().toString().padStart(2, '0');\nvar minutes = date.getMinutes().toString().padStart(2, '0');\nvar seconds = date.getSeconds().toString().padStart(2, '0');\nvar milliseconds = date.getMilliseconds().toString().padStart(2, '0');\n\nvar result = year + \".\" + month + \".\" + day + \" \" + hours + \":\" + minutes + \":\" + seconds + \".\" +milliseconds;\n\nvar payload = msg.payload;\n\n// Zeitstempel zur Payload hinzufügen\nvar newPayload = {\n    Zeit: result,\n    Temperatur: payload\n};\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "d176652c789b45db",
+                "105e78cc158c57d6"
+            ]
+        ]
+    },
+    {
+        "id": "d176652c789b45db",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2570a8d8e84c6ed2",
+        "type": "file",
+        "z": "379a604c869e1a5d",
+        "name": "TasterA in Log schreiben",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a1623f726b54893",
+        "type": "function",
+        "z": "379a604c869e1a5d",
+        "name": "function 4",
+        "func": "var date = new Date();\n\nvar year = date.getFullYear();\nvar month = (date.getMonth() + 1).toString().padStart(2, '0');\nvar day = date.getDate().toString().padStart(2, '0');\nvar hours = date.getHours().toString().padStart(2, '0');\nvar minutes = date.getMinutes().toString().padStart(2, '0');\nvar seconds = date.getSeconds().toString().padStart(2, '0');\nvar milliseconds = date.getMilliseconds().toString().padStart(2, '0');\n\nvar result = year + \".\" + month + \".\" + day + \" \" + hours + \":\" + minutes + \":\" + seconds + \".\" + milliseconds;\n\nvar payload = msg.payload;\n\n// Zeitstempel zur Payload hinzufügen\nvar newPayload = {\n    Zeit: result,\n    Schalter: payload\n};\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "2570a8d8e84c6ed2",
+                "ebd7f03d6d14ead5"
+            ]
+        ]
+    },
+    {
+        "id": "ebd7f03d6d14ead5",
+        "type": "debug",
+        "z": "379a604c869e1a5d",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7462ab83dedbf3c2",
+        "type": "ui_group",
+        "name": "Dashboard Test",
+        "tab": "9546daa607754c8b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "127d96a2f9c59841",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.178.65",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9546daa607754c8b",
+        "type": "ui_tab",
+        "name": "PB-07-Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
