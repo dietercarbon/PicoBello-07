@@ -1,0 +1,759 @@
+[
+    {
+        "id": "6d64a39e640dfeab",
+        "type": "tab",
+        "label": "PB-07-Test-Flows neu",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b3f274a07fa5c6be",
+        "type": "inject",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 40,
+        "wires": [
+            [
+                "f72118d8959eace8",
+                "e6c8a10bb1e8895d"
+            ]
+        ]
+    },
+    {
+        "id": "f72118d8959eace8",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b17f237bf9b56881",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "cb6a70b30d1db2d5",
+        "type": "mqtt in",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "topic": "TasterA",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "127d96a2f9c59841",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "be2cb6c7cf72bfa2",
+                "1f1603f0cb0446c6"
+            ]
+        ]
+    },
+    {
+        "id": "be2cb6c7cf72bfa2",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f96a320a3e2f07e4",
+        "type": "mqtt out",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "topic": "LEDA",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "127d96a2f9c59841",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "681673a323882a65",
+        "type": "inject",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "f96a320a3e2f07e4"
+            ]
+        ]
+    },
+    {
+        "id": "4563a9cf33960982",
+        "type": "inject",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "f96a320a3e2f07e4"
+            ]
+        ]
+    },
+    {
+        "id": "708299b40fa6387b",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "Ausgabe",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6897b68fbf93211b",
+        "type": "inject",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TasterA",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "1f1603f0cb0446c6"
+            ]
+        ]
+    },
+    {
+        "id": "1f1603f0cb0446c6",
+        "type": "function",
+        "z": "6d64a39e640dfeab",
+        "name": "Trigger wechselt 0&1",
+        "func": "if (flow.get(\"state\") === undefined) {\n    flow.set(\"state\", 0);\n}\n\n// Wechsle den Zustand zwischen 0 und 1\nif (flow.get(\"state\") === 0) {\n    flow.set(\"state\", 1);\n} else {\n    flow.set(\"state\", 0);\n}\n\n// Gib den aktuellen Zustand aus\nmsg.payload = flow.get(\"state\");\nreturn msg;\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "708299b40fa6387b",
+                "f96a320a3e2f07e4",
+                "8e045d2cf79cfb6e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b5bbb48f1594bb35",
+        "type": "mqtt in",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "topic": "TempA",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "127d96a2f9c59841",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "efa96bd0a94264ed",
+                "915d8b600d42dc00",
+                "b3fc5381ff4b7981"
+            ]
+        ]
+    },
+    {
+        "id": "efa96bd0a94264ed",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 650,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b3a31461e17e5700",
+        "type": "file",
+        "z": "6d64a39e640dfeab",
+        "name": "TempA in Log schreiben",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 750,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f1f473bff92c7eb",
+        "type": "file",
+        "z": "6d64a39e640dfeab",
+        "name": "",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "encoding": "none",
+        "x": 430,
+        "y": 780,
+        "wires": [
+            [
+                "3649ee5f83c490b4"
+            ]
+        ]
+    },
+    {
+        "id": "3649ee5f83c490b4",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "Datei gelöscht",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "915d8b600d42dc00",
+        "type": "function",
+        "z": "6d64a39e640dfeab",
+        "name": "Temperatur loggen",
+        "func": "var date = new Date();\n\nvar year = date.getFullYear();\nvar month = (date.getMonth() + 1).toString().padStart(2, '0');\nvar day = date.getDate().toString().padStart(2, '0');\nvar hours = date.getHours().toString().padStart(2, '0');\nvar minutes = date.getMinutes().toString().padStart(2, '0');\nvar seconds = date.getSeconds().toString().padStart(2, '0');\nvar milliseconds = date.getMilliseconds().toString().padStart(2, '0');\n\nvar result = year + \".\" + month + \".\" + day + \" \" + hours + \":\" + minutes + \":\" + seconds + \".\" +milliseconds;\n\nvar payload = msg.payload;\n\n// Zeitstempel zur Payload hinzufügen\nvar newPayload = {\n    Zeit: result,\n    Temperatur: payload\n};\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "12ee0a75936550f2",
+                "b3a31461e17e5700"
+            ]
+        ]
+    },
+    {
+        "id": "12ee0a75936550f2",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "914188a5aae9ecb9",
+        "type": "file",
+        "z": "6d64a39e640dfeab",
+        "name": "TasterA in Log schreiben",
+        "filename": "20230604 Test V01.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e045d2cf79cfb6e",
+        "type": "function",
+        "z": "6d64a39e640dfeab",
+        "name": "function 4",
+        "func": "var date = new Date();\n\nvar year = date.getFullYear();\nvar month = (date.getMonth() + 1).toString().padStart(2, '0');\nvar day = date.getDate().toString().padStart(2, '0');\nvar hours = date.getHours().toString().padStart(2, '0');\nvar minutes = date.getMinutes().toString().padStart(2, '0');\nvar seconds = date.getSeconds().toString().padStart(2, '0');\nvar milliseconds = date.getMilliseconds().toString().padStart(2, '0');\n\nvar result = year + \".\" + month + \".\" + day + \" \" + hours + \":\" + minutes + \":\" + seconds + \".\" + milliseconds;\n\nvar payload = msg.payload;\n\n// Zeitstempel zur Payload hinzufügen\nvar newPayload = {\n    Zeit: result,\n    Schalter: payload\n};\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "914188a5aae9ecb9",
+                "12eeb84dcef2b10e"
+            ]
+        ]
+    },
+    {
+        "id": "12eeb84dcef2b10e",
+        "type": "debug",
+        "z": "6d64a39e640dfeab",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "63722ca71b1e4ad9",
+        "type": "ui-button",
+        "z": "6d64a39e640dfeab",
+        "group": "549f71856e5eed34",
+        "name": "Button1",
+        "label": "Button1",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "Moin von Button1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "b17f237bf9b56881",
+                "1f1603f0cb0446c6"
+            ]
+        ]
+    },
+    {
+        "id": "3007d05ef0b0eba5",
+        "type": "ui-dropdown",
+        "z": "6d64a39e640dfeab",
+        "group": "549f71856e5eed34",
+        "name": "Schiebung",
+        "label": "0 oder 1 auswählen:",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Wert 0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "Wert 1",
+                "value": 1,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "1f1603f0cb0446c6"
+            ]
+        ]
+    },
+    {
+        "id": "e6c8a10bb1e8895d",
+        "type": "ui-text",
+        "z": "6d64a39e640dfeab",
+        "group": "549f71856e5eed34",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Eingabe vom Inject",
+        "label": "Eingabe vom Inject",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payloads",
+        "valueType": "msg",
+        "x": 870,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "285e9ee68f447419",
+        "type": "ui-button",
+        "z": "6d64a39e640dfeab",
+        "group": "549f71856e5eed34",
+        "name": "Lösche Datei",
+        "label": "Lösche Datei",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "Lösche Datei",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 170,
+        "y": 720,
+        "wires": [
+            [
+                "7f1f473bff92c7eb"
+            ]
+        ]
+    },
+    {
+        "id": "b3fc5381ff4b7981",
+        "type": "ui-chart",
+        "z": "6d64a39e640dfeab",
+        "group": "549f71856e5eed34",
+        "name": "chart",
+        "label": "chart",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 450,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "127d96a2f9c59841",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.233",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "549f71856e5eed34",
+        "type": "ui-group",
+        "name": "Wohnzimmer",
+        "page": "f37d2006bcc0c6eb",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f37d2006bcc0c6eb",
+        "type": "ui-page",
+        "name": "EG",
+        "ui": "8db36ee61c9128ea",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "2a2d79db3e11b068",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "8db36ee61c9128ea",
+        "type": "ui-base",
+        "name": "Mein Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": "1",
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "2a2d79db3e11b068",
+        "type": "ui-theme",
+        "name": "Standardthema",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
